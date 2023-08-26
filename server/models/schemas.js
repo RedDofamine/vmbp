@@ -1,4 +1,4 @@
-const mongoose = require('mongoose');
+import mongoose from "mongoose";
 
 function validateTime(value) {
 	return value >= 0 && value < 60;
@@ -21,6 +21,6 @@ const parameterSchema = mongoose.Schema({
 	description: String,
 }, { _id: false })
 
-module.exports = { parameterSchema, timeSchema, cipherSchema, typeSchema };
+export { parameterSchema, timeSchema, cipherSchema };
 
 

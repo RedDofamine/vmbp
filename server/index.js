@@ -1,28 +1,30 @@
-const config = require('./config/config')
+import mongoose from 'mongoose'
+import express from 'express'
+import { db, server } from './config/config.js'
 
-const mongoose = require('mongoose')
-const express = require('express')
+import detailRouter from './endpoints/detailRoutes.js'
+import itemRouter from './endpoints/itemRoutes.js'
+import typeRouter from './endpoints/typeRoutes.js'
 
-const usersRouter = require('./endpoints/userRouter')
-// const docRouter = require('./endpoints/docRoutes')
-const detailRouter = require('./endpoints/detailRoutes')
+import telegramRouter from './endpoints/telegramRoutes.js'
 
 const app = new express()
 app.use(express.json())
-app.use(usersRouter)
-// app.use(docRouter)
 app.use(detailRouter)
+app.use(itemRouter)
+app.use(typeRouter)
+app.use(telegramRouter)
+
 
 async function dbConnect() {
-	await mongoose.connect(config.db.token, {
+	await mongoose.connect(db.token, {
 		useNewUrlParser: true,
 		useUnifiedTopology: true,
-		dbName: config.db.name
+		dbName: db.name
 	})
 }
 function start() {
 	dbConnect()
-
-	app.listen(config.server.port, () => console.log(`Server running on port ${config.server.port}`))
+	app.listen(server.port, () => console.log(`Server running on port ${server.port}`))
 }
 start()

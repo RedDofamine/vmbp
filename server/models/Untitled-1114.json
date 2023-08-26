@@ -1,0 +1,53 @@
+{
+	"title": "Nut",
+	"cipher": {
+		"origin": "VMZ0811305",
+		"gradations": [
+			1,
+			2,
+			3,
+			4,
+			5,
+			7700
+		],
+		"reference": [
+			"VMZ0811303",
+			"VMZ0811304"
+		]
+	},
+	"product": "03400",
+	"user": "Eugeene",
+	"operations": [
+		{
+			"title": "Preparation",
+			"number": 10
+		},
+		{
+			"title": "Jog with CNC",
+			"number": 15,
+			"machine": "16k20",
+			"os": "wl4t",
+			"time": {
+				"hours": 0,
+				"minutes": 14,
+				"seconds": 28
+			}
+		},
+		{
+			"title": "thermo preparation",
+			"number": 20
+		},
+		{
+			"title": "Jog with CNC",
+			"number": 25,
+			"machine": "1v340",
+			"os": "wl4t",
+			"time": {
+				"hours": 0,
+				"minutes": 21,
+				"seconds": 2
+			}
+		}
+	],
+	"material": "st45"
+}

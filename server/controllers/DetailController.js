@@ -1,4 +1,4 @@
-const Detail = require('../models/Detail');
+import Detail from '../models/Detail.js'
 
 async function create(req, res) {
 	try {
@@ -43,4 +43,4 @@ async function remove(req, res) {
 
 }
 
-module.exports = { create, get, update, remove }
+export default { create, get, update, remove }

@@ -1,5 +1,5 @@
-const mongoose = require('mongoose');
-const { cipherSchema, timeSchema } = require('./schemas');
+import mongoose from 'mongoose'
+import { cipherSchema, timeSchema } from './schemas.js'
 
 const operationSchema = mongoose.Schema({
 	title: { type: String },
@@ -36,4 +36,4 @@ const detailSchema = mongoose.Schema({
 // 	next();
 // })
 
-module.exports = mongoose.model('Detail', detailSchema);
+export default mongoose.model('Detail', detailSchema);
